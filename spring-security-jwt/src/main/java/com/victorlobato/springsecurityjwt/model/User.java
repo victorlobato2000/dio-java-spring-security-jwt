@@ -1,6 +1,8 @@
 package com.victorlobato.springsecurityjwt.model;
 
 
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -60,5 +62,5 @@ public class User {
     public void setRoles(List<String> roles) {
         this.roles = roles;
     }
-    
+
 }
