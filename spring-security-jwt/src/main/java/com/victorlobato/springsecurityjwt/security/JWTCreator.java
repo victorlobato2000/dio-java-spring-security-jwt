@@ -1,17 +1,9 @@
 package com.victorlobato.springsecurityjwt.security;
 
-import java.util.Arrays;
-import java.util.Date;
+import io.jsonwebtoken.*;
+
 import java.util.List;
 import java.util.stream.Collectors;
-
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.MalformedJwtException;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.SignatureException;
-import io.jsonwebtoken.UnsupportedJwtException;
 
 public class JWTCreator {
     public static final String HEADER_AUTHORIZATION = "Authorization";
@@ -37,6 +29,5 @@ public class JWTCreator {
     private static List<String> checkRoles(List<String> roles) {
         return roles.stream().map(s -> "ROLE_".concat(s.replaceAll("ROLE_",""))).collect(Collectors.toList());
     }
-
 
 }
